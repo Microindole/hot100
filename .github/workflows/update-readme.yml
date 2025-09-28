@@ -1,0 +1,45 @@
+name: Generate README
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set execute permission for script
+        run: chmod +x ./generate_index.sh
+
+      - name: Run script to organize and update README
+        run: ./generate_index.sh
+
+      # --- 👇 这是需要修正的部分 👇 ---
+      - name: Commit and push if changes were made
+        run: |
+          # 配置 Git 用户信息
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          # 使用 'git add .' 来暂存所有变动
+          # 这会捕捉到 hot100/temp/ 中被删除的文件
+          # 以及 hot100/problems/ 和 hot100/knowledge/ 中新增的文件
+          # 还有被修改的 README.md
+          git add .
+
+          # 检查暂存区是否有文件变动
+          # --cached 参数确保我们检查的是已暂存的更改
+          if ! git diff --cached --quiet; then
+            git commit -m "auto: 自动整理笔记并更新目录"
+            git push
+          else
+            echo "No changes to commit."
+          fi
