@@ -8,6 +8,9 @@ on:
       - main
       - master
 
+permissions:
+  contents: write
+
 # 工作流执行的任务
 jobs:
   build:
@@ -16,17 +19,14 @@ jobs:
 
     steps:
       # 第一步：检出（Checkout）你的代码
-      # 这一步会将你的仓库代码下载到 Action 的运行环境中
       - name: Checkout repository
         uses: actions/checkout@v4
 
       # 第二步：给予 generate_index.sh 脚本执行权限
-      # 这是因为在 Git 中，文件的执行权限可能不会被默认保留
       - name: Set execute permission for script
         run: chmod +x ./generate_index.sh
 
       # 第三步：运行脚本来生成新的 README.md
-      # 这里会执行您提供的脚本文件
       - name: Run script to generate README
         run: ./generate_index.sh
 
@@ -41,7 +41,6 @@ jobs:
           git add README.md
           
           # 检查是否有文件变动。如果有，则创建提交并推送
-          # "git diff-index --quiet HEAD" 会在没有变动时返回 0，有变动时返回 1
           if ! git diff-index --quiet HEAD; then
             git commit -m "docs: auto-generate README"
             git push
