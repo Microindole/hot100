@@ -38,7 +38,7 @@ jobs:
           # 检查暂存区是否有文件变动
           # --cached 参数确保我们检查的是已暂存的更改
           if ! git diff --cached --quiet; then
-            git commit -m "docs: 自动整理笔记并更新目录"
+            git commit -m "auto: 自动整理笔记并更新目录"
             git push
           else
             echo "No changes to commit."
