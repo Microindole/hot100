@@ -117,7 +117,7 @@ echo "" >> "$output_file"
 
 
 # 5. 写入文件尾部
-current_date=$(TZ="Asia/Tokyo" date +'%Y-%m-%d %H:%M:%S %Z')
+current_date=$(TZ="UTC" date +'%Y-%m-%d %H:%M:%S %Z')
 echo "---" >> "$output_file"
 echo "*🤖 本目录由脚本自动生成，最后更新于 ${current_date}*" >> "$output_file"
 
