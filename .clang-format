@@ -1,0 +1,9 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+AccessModifierOffset: -4
+ColumnLimit: 120
+BreakBeforeBraces: Attach
+AllowShortFunctionsOnASingleLine: All
+AlignAfterOpenBracket: Align
+AllowShortCaseLabelsOnASingleLine: true
+Standard: Latest
