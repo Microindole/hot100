@@ -25,7 +25,7 @@ jobs:
           find . -iname "*.cpp" -o -iname "*.h" -o -iname "*.hpp" | xargs clang-format -i
 
       - name: Commit and Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "style: 🎨 auto format C++ code with clang-format"
           file_pattern: "*.cpp *.h *.hpp"

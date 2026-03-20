@@ -37,7 +37,7 @@ jobs:
 
       # 3. 统一提交并推送所有变动 (格式化 + README)
       - name: Commit and Push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: 🎨 auto format C++ and 📝 update README"
           file_pattern: "."
