@@ -39,5 +39,5 @@ jobs:
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "chore: 🎨 auto format C++ and 📝 update README"
+          commit_message: "auto format C++ and update README"
           file_pattern: "."
