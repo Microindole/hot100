@@ -80,9 +80,9 @@ using namespace std;
 // 1. 定义一个结构体，清晰地打包三个变量
 // 以后再也不用去记 pair 里面套 pair 那种反人类的写法了！
 struct Node {
-    int x;    // 当前所在行
-    int y;    // 当前所在列
-    int step; // 走到这里花了多少步
+    int x;     // 当前所在行
+    int y;     // 当前所在列
+    int step;  // 走到这里花了多少步
 };
 
 // 2. 方向数组：马走日的 8 个固定跳法
@@ -118,7 +118,6 @@ int main() {
             int nx = curr.x + dx[i];
             int ny = curr.y + dy[i];
             if (nx >= 0 && nx < n && ny >= 0 && ny < n && visited[nx][ny] == false) {
-
                 visited[nx][ny] = true;
                 times++;
                 q.push({nx, ny, curr.step + 1});

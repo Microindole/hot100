@@ -51,13 +51,13 @@ int main() {
         }
         xiaoc = (ayi == byi) ? true : false;
         if (a[i][0] != b[i][0]) {
-            real = false; // 长度都不一样，客观上肯定不相等
+            real = false;  // 长度都不一样，客观上肯定不相等
         } else {
             // 长度一样时，逐个比对原始数字
             for (int j = 1; j <= a[i][0]; j++) {
                 if (a[i][j] != b[i][j]) {
                     real = false;
-                    break; // 只要发现一个不一样，就可以提前结束比对了
+                    break;  // 只要发现一个不一样，就可以提前结束比对了
                 }
             }
         }
