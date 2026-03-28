@@ -2,3 +2,6 @@
 build/
 
 *.exe
+
+/tmp/
+/temp/
