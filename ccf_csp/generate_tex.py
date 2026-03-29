@@ -24,13 +24,13 @@ LATEX_AUX_SUFFIXES = [
 ]
 HYPERTARGET_PREFIX_RE = re.compile(r"\\hypertarget\{[^}]*\}\{%\s*", re.DOTALL)
 HEADING_EXTRA_BRACE_RE = re.compile(
-    r"(\\(?:section|subsection|subsubsection|paragraph)\{[^{}]*\})\}",
+    r"(\\(?:section|subsection|subsubsection|paragraph|subparagraph)\{[^{}]*\})\}",
     re.DOTALL,
 )
 LABEL_RE = re.compile(r"\\label\{[^}]*\}")
 BOLD_RE = re.compile(r"\*\*(.+?)\*\*", re.DOTALL)
 LONGTABLE_RE = re.compile(
-    r"\\begin\{longtable\}\[\]\{@\{\}ll@\{\}\}\s*"
+    r"\\begin\{longtable\}\[\]\{(?P<spec>[^\n]*)\}\s*"
     r"(.*?)\\midrule\s*"
     r"\\endhead\s*"
     r"(.*?)"
@@ -114,17 +114,23 @@ def convert_markdown_to_latex(path: Path) -> str:
     latex = latex.replace(r"\subsection{", r"\subsection*{")
     latex = latex.replace(r"\subsubsection{", r"\subsubsection*{")
     latex = latex.replace(r"\paragraph{", r"\paragraph*{")
+    latex = latex.replace(r"\subparagraph{", r"\paragraph*{")
     latex = LONGTABLE_RE.sub(convert_longtable_to_tabularx, latex)
     return latex + "\n"
 
 
 def convert_longtable_to_tabularx(match: re.Match[str]) -> str:
-    header = match.group(1).strip()
-    body = match.group(2).strip()
+    spec = match.group("spec")
+    header = match.group(2).strip()
+    body = match.group(3).strip()
+    col_count = len(re.findall(r"[lcr]", spec))
+    if col_count == 0:
+        col_count = 2
+    tabularx_spec = "@{}" + " ".join([r">{\raggedright\arraybackslash}X"] * col_count) + "@{}"
     return (
         r"\begin{center}" + "\n"
         r"\small" + "\n"
-        r"\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}" + "\n"
+        + rf"\begin{{tabularx}}{{\linewidth}}{{{tabularx_spec}}}" + "\n"
         + header
         + "\n"
         + body
@@ -172,7 +178,7 @@ def latex_preamble(title: str) -> str:
     numbers=left,
     numberstyle=\tiny\color{{gray}},
     stepnumber=1,
-    numbersep=8pt,
+    numbersep=6pt,
     showstringspaces=false,
     breaklines=true,
     breakatwhitespace=false,
@@ -181,7 +187,9 @@ def latex_preamble(title: str) -> str:
     framerule=0.4pt,
     rulecolor=\color{{coderule}},
     columns=fullflexible,
-    keepspaces=true
+    keepspaces=true,
+    xleftmargin=1.6em,
+    framexleftmargin=1.2em
 }}
 \lstset{{style=cppstyle}}
 \providecommand{{\passthrough}}[1]{{#1}}
@@ -195,7 +203,7 @@ def latex_preamble(title: str) -> str:
 \titlespacing*{{\subsubsection}}{{0pt}}{{0.3em}}{{0.1em}}
 \titlespacing*{{\paragraph}}{{0pt}}{{0.25em}}{{0.1em}}
 
-\setlength{{\columnsep}}{{1.2em}}
+\setlength{{\columnsep}}{{2.0em}}
 \setlength{{\columnseprule}}{{0.4pt}}
 \setlength{{\premulticols}}{{0pt}}
 \setlength{{\postmulticols}}{{0pt}}
