@@ -5,3 +5,7 @@ build/
 
 /tmp/
 /temp/
+
+out/
+
+.idea/
