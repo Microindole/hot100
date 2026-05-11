@@ -13,7 +13,8 @@ string decodeString(string s) {
     for (int i = 0; i < n; i++) {
         if (s[i] <= '9' && s[i] >= '0') {
             int ssize = curr.size();
-            if (ssize == 0 || curr[ssize - 1] <= '9' && curr[ssize - 1] >= '0') {
+            if (ssize == 0 ||
+                curr[ssize - 1] <= '9' && curr[ssize - 1] >= '0') {
                 curr += s[i];
             } else {
                 saveString.push(curr);

@@ -32,7 +32,8 @@ private:
     }
 
 public:
-    vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values,
+    vector<double> calcEquation(vector<vector<string>>& equations,
+                                vector<double>& values,
                                 vector<vector<string>>& queries) {
         // 初始化并查集
         for (int i = 0; i < equations.size(); ++i) {
@@ -55,7 +56,8 @@ public:
             string b = q[1];
 
             // 1. 如果变量从未出现过
-            if (parent.find(a) == parent.end() || parent.find(b) == parent.end()) {
+            if (parent.find(a) == parent.end() ||
+                parent.find(b) == parent.end()) {
                 results.push_back(-1.0);
             } else {
                 string rootA = find(a);

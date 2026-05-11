@@ -6,7 +6,8 @@ using namespace std;
 
 class Solution {
 public:
-    void getRes(string digits, int size, int index, string& curr, const vector<string> phone, vector<string>& res) {
+    void getRes(string digits, int size, int index, string& curr,
+                const vector<string> phone, vector<string>& res) {
         if (index == size) {
             res.push_back(curr);
             return;
@@ -22,7 +23,8 @@ public:
     }
 
     vector<string> letterCombinations(string digits) {
-        vector<string> phone = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        vector<string> phone = {"",    "",    "abc",  "def", "ghi",
+                                "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
         vector<string> res;
 

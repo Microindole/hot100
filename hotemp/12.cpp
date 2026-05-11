@@ -9,7 +9,8 @@ public:
         // 按照面值从大到小排列
         // 包含 7 个基础符号和 6 个特殊的减法组合
         int values[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
-        string symbols[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        string symbols[] = {"M",  "CM", "D",  "CD", "C",  "XC", "L",
+                            "XL", "X",  "IX", "V",  "IV", "I"};
 
         string res = "";
 

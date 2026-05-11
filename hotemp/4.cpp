@@ -4,7 +4,8 @@
 
 class Solution {
 public:
-    double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2) {
+    double findMedianSortedArrays(std::vector<int>& nums1,
+                                  std::vector<int>& nums2) {
         // 确保 nums1 是较短的数组，减少二分次数，并防止 j 出现负数
         if (nums1.size() > nums2.size()) {
             return findMedianSortedArrays(nums2, nums1);

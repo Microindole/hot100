@@ -22,7 +22,8 @@ public:
                 } else if (j == i) {
                     dp[i][j] = dp[i - 1][j - 1] + triangle[i][j];
                 } else {
-                    dp[i][j] = min(dp[i - 1][j - 1], dp[i - 1][j]) + triangle[i][j];
+                    dp[i][j] =
+                        min(dp[i - 1][j - 1], dp[i - 1][j]) + triangle[i][j];
                 }
             }
         }

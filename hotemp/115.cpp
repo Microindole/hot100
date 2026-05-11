@@ -10,7 +10,8 @@ public:
         int m = t.length();
 
         // dp[i][j] 表示 s 的前 i 个字符能组成多少个 t 的前 j 个字符
-        vector<vector<unsigned long long>> dp(n + 1, vector<unsigned long long>(m + 1, 0));
+        vector<vector<unsigned long long>> dp(
+            n + 1, vector<unsigned long long>(m + 1, 0));
 
         for (int i = 0; i <= n; ++i) {
             dp[i][0] = 1;

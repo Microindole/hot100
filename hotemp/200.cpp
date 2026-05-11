@@ -20,7 +20,8 @@ public:
     }
 
     void dfs(int i, int j, vector<vector<char>>& grid) {
-        if (i < 0 || j < 0 || i >= grid.size() || j >= grid[0].size() || grid[i][j] == '0') {
+        if (i < 0 || j < 0 || i >= grid.size() || j >= grid[0].size() ||
+            grid[i][j] == '0') {
             return;
         }
 

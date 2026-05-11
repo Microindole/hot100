@@ -6,7 +6,8 @@ using namespace std;
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
-        int target = nums.size() - k;  // 第 k 大即为升序排序后的第 n-k 个（索引从 0 开始）
+        int target = nums.size() -
+                     k;  // 第 k 大即为升序排序后的第 n-k 个（索引从 0 开始）
         int left = 0, right = nums.size() - 1;
 
         while (true) {

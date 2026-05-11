@@ -17,7 +17,9 @@ public:
             for (int j = i + 2; j <= n + 1; j++) {
                 // k 是 (i, j) 之间最后一个被戳破的气球
                 for (int k = i + 1; k < j; k++) {
-                    dp[i][j] = max(dp[i][j], dp[i][k] + dp[k][j] + points[i] * points[k] * points[j]);
+                    dp[i][j] =
+                        max(dp[i][j], dp[i][k] + dp[k][j] +
+                                          points[i] * points[k] * points[j]);
                 }
             }
         }
