@@ -117,7 +117,8 @@ int main() {
         for (int i = 0; i < 8; i++) {
             int nx = curr.x + dx[i];
             int ny = curr.y + dy[i];
-            if (nx >= 0 && nx < n && ny >= 0 && ny < n && visited[nx][ny] == false) {
+            if (nx >= 0 && nx < n && ny >= 0 && ny < n &&
+                visited[nx][ny] == false) {
                 visited[nx][ny] = true;
                 times++;
                 q.push({nx, ny, curr.step + 1});

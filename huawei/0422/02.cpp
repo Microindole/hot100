@@ -21,9 +21,9 @@ void solve() {
 
     vector<Dependency> input_order;                   // 记录输入顺序
     unordered_map<long long, vector<long long>> adj;  // 邻接表
-    unordered_map<long long, int> in_degree;          // 记录每个节点的入度
-    unordered_map<long long, int> max_versions;       // 记录每个部件 v 的最大版本号
-    unordered_set<long long> all_nodes;               // 统计所有出现的节点
+    unordered_map<long long, int> in_degree;  // 记录每个节点的入度
+    unordered_map<long long, int> max_versions;  // 记录每个部件 v 的最大版本号
+    unordered_set<long long> all_nodes;  // 统计所有出现的节点
 
     for (int i = 0; i < n; ++i) {
         string line;
@@ -39,7 +39,8 @@ void solve() {
         input_order.push_back({u, v, ver});
 
         // 2. 统计最大版本号：针对被依赖的对象 v
-        if (max_versions.find(v) == max_versions.end() || ver > max_versions[v]) {
+        if (max_versions.find(v) == max_versions.end() ||
+            ver > max_versions[v]) {
             max_versions[v] = ver;
         }
 

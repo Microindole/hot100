@@ -25,7 +25,8 @@ int main() {
         cin >> cakes[i].z;
     }
 
-    sort(cakes.begin(), cakes.end(), [](const cake& a, const cake& b) { return a.x < b.x; });
+    sort(cakes.begin(), cakes.end(),
+         [](const cake& a, const cake& b) { return a.x < b.x; });
 
     vector<vector<int>> dp(e + 1, vector<int>(k + 1, -1));
     dp[0][0] = w;
@@ -34,7 +35,8 @@ int main() {
         for (int j = e - cakes[i].z; j >= 0; j--) {
             for (int p = k - 1; p >= 0; p--) {
                 if (dp[j][p] >= cakes[i].x) {
-                    dp[j + cakes[i].z][p + 1] = max(dp[j + cakes[i].z][p + 1], dp[j][p] + cakes[i].y);
+                    dp[j + cakes[i].z][p + 1] =
+                        max(dp[j + cakes[i].z][p + 1], dp[j][p] + cakes[i].y);
                 }
             }
         }

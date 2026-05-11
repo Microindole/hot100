@@ -14,7 +14,9 @@ void performTranspose(vector<int>& src, int& n, int& m) {
     swap(n, m);
 }
 
-int getValue(int x, int y, vector<int>& src, int ysize) { return src[x * ysize + y]; }
+int getValue(int x, int y, vector<int>& src, int ysize) {
+    return src[x * ysize + y];
+}
 
 int main() {
     ios::sync_with_stdio(false);

@@ -43,7 +43,8 @@ int main() {
         for (int i = 1; i <= n; i++) {
             // 判断点 i 是否在基站 j 的范围内
             // abs(x1 - x2) <= r 且 abs(y1 - y2) <= r
-            if (abs(node_x[i] - st_x[j]) <= st_r[j] && abs(node_y[i] - st_y[j]) <= st_r[j]) {
+            if (abs(node_x[i] - st_x[j]) <= st_r[j] &&
+                abs(node_y[i] - st_y[j]) <= st_r[j]) {
                 // 节点 -> 基站，权值为 st_t[j]
                 e[i].push_back(st_id);
                 w[i].push_back((ll)st_t[j]);
@@ -60,7 +61,8 @@ int main() {
 
     // 优先队列存的是 <距离, 点的编号>
     // pair<ll, int> 默认先按第一个元素（距离）排序
-    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> pq;
+    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>>
+        pq;
 
     dist[1] = 0;
     pq.push({0, 1});

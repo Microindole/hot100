@@ -14,7 +14,8 @@ int randomLevel(int max_level) {
 }
 
 // 插入函数：通过引用传递 vals 和 nexts
-void insert(int x, vector<int>& vals, vector<vector<int>>& nexts, int& cur_level, int max_level) {
+void insert(int x, vector<int>& vals, vector<vector<int>>& nexts,
+            int& cur_level, int max_level) {
     int head = 0;
     vector<int> update(max_level, head);
     int p = head;
@@ -43,7 +44,8 @@ void insert(int x, vector<int>& vals, vector<vector<int>>& nexts, int& cur_level
 }
 
 // 查找函数
-bool search(int x, const vector<int>& vals, const vector<vector<int>>& nexts, int cur_level) {
+bool search(int x, const vector<int>& vals, const vector<vector<int>>& nexts,
+            int cur_level) {
     int p = 0;  // head 始终是 0
     for (int i = cur_level - 1; i >= 0; i--) {
         while (nexts[p][i] != -1 && vals[nexts[p][i]] < x) {
@@ -55,7 +57,8 @@ bool search(int x, const vector<int>& vals, const vector<vector<int>>& nexts, in
 }
 
 // 删除函数
-bool remove(int x, const vector<int>& vals, vector<vector<int>>& nexts, int& cur_level, int max_level) {
+bool remove(int x, const vector<int>& vals, vector<vector<int>>& nexts,
+            int& cur_level, int max_level) {
     int head = 0;
     vector<int> update(max_level, head);
     int p = head;

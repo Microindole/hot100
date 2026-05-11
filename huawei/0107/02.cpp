@@ -8,7 +8,9 @@ struct Point {
     long long x, y;
 };
 
-long long getDis(Point p1, Point p2) { return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y); }
+long long getDis(Point p1, Point p2) {
+    return (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y);
+}
 
 long long solve(vector<Point>& ps, int left, int right) {
     long long d = -1;
@@ -39,10 +41,14 @@ long long solve(vector<Point>& ps, int left, int right) {
         }
     }
 
-    sort(during.begin(), during.end(), [](const Point& a, const Point& b) { return a.y < b.y; });
+    sort(during.begin(), during.end(),
+         [](const Point& a, const Point& b) { return a.y < b.y; });
 
     for (int i = 0; i < during.size(); i++) {
-        for (int j = i + 1; j < during.size() && (during[i].y - during[j].y) * (during[i].y - during[j].y) <= d; j++) {
+        for (int j = i + 1;
+             j < during.size() &&
+             (during[i].y - during[j].y) * (during[i].y - during[j].y) <= d;
+             j++) {
             d = min(d, getDis(during[i], during[j]));
         }
     }

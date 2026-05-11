@@ -67,7 +67,8 @@ bool compareFiles(const FileNode& a, const FileNode& b) {
         }
 
         else {
-            if (segA.content != segB.content) return segA.content < segB.content;
+            if (segA.content != segB.content)
+                return segA.content < segB.content;
         }
     }
 

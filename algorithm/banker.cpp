@@ -5,7 +5,8 @@
 using namespace std;
 
 // 安全性检查函数：使用引用传递数据，避免拷贝
-bool is_safe(int n, int m, vector<int> work, const vector<vector<int>>& need, const vector<vector<int>>& alloc) {
+bool is_safe(int n, int m, vector<int> work, const vector<vector<int>>& need,
+             const vector<vector<int>>& alloc) {
     vector<bool> finish(n, false);
     vector<int> safe_seq;
 
@@ -37,7 +38,8 @@ bool is_safe(int n, int m, vector<int> work, const vector<vector<int>>& need, co
 
     if (safe_seq.size() == n) {
         cout << "> 安全序列: ";
-        for (int i = 0; i < n; ++i) cout << "P" << safe_seq[i] << (i == n - 1 ? "" : " -> ");
+        for (int i = 0; i < n; ++i)
+            cout << "P" << safe_seq[i] << (i == n - 1 ? "" : " -> ");
         cout << endl;
         return true;
     }

@@ -66,8 +66,10 @@ void solve() {
             size_t second_start = s.find('(', first_end);
             size_t second_end = s.find(')', second_start);
 
-            Expr e1 = parseExpr(s.substr(first_start + 1, first_end - first_start - 1));
-            Expr e2 = parseExpr(s.substr(second_start + 1, second_end - second_start - 1));
+            Expr e1 = parseExpr(
+                s.substr(first_start + 1, first_end - first_start - 1));
+            Expr e2 = parseExpr(
+                s.substr(second_start + 1, second_end - second_start - 1));
 
             for (auto const& [dn, attrs] : info) {
                 bool res1 = check(dn, e1, info);
@@ -130,15 +132,15 @@ map<int, unordered_map<int, int>> info;
 // 辅助函数：计算两个 set 的交集
 set<int> intersect(const set<int>& a, const set<int>& b) {
     set<int> res;
-    set_intersection(a.begin(), a.end(), b.begin(), b.end(), inserter(res, res.begin()));
-    return res;
+    set_intersection(a.begin(), a.end(), b.begin(), b.end(), inserter(res,
+res.begin())); return res;
 }
 
 // 辅助函数：计算两个 set 的并集
 set<int> unite(const set<int>& a, const set<int>& b) {
     set<int> res;
-    set_union(a.begin(), a.end(), b.begin(), b.end(), inserter(res, res.begin()));
-    return res;
+    set_union(a.begin(), a.end(), b.begin(), b.end(), inserter(res,
+res.begin())); return res;
 }
 
 // 核心：递归解析函数

@@ -28,7 +28,8 @@ int solve() {
 
     // dp[i][j][0] 表示“横着”进入该格子的最少转向次数（从左边来）
     // dp[i][j][1] 表示“竖着”进入该格子的最少转向次数（从上面来）
-    vector<vector<vector<int>>> dp(m, vector<vector<int>>(n, vector<int>(2, INF)));
+    vector<vector<vector<int>>> dp(m,
+                                   vector<vector<int>>(n, vector<int>(2, INF)));
 
     // 初始化起点：由于起点没有前一格，不计转向，两个状态都设为 0
     dp[0][0][0] = 0;

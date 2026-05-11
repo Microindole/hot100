@@ -17,7 +17,8 @@ struct Block {
 void parseHeader(string s, int& NN, int& MM, int& nn, int& mm) {
     // 将干扰字符替换为空格，方便 stringstream 读取
     for (int i = 0; i < s.length(); i++) {
-        if (s[i] == '@' || s[i] == '-' || s[i] == '+' || s[i] == ',') s[i] = ' ';
+        if (s[i] == '@' || s[i] == '-' || s[i] == '+' || s[i] == ',')
+            s[i] = ' ';
     }
     stringstream ss(s);
     ss >> NN >> MM >> nn >> mm;
@@ -109,10 +110,12 @@ int main() {
 
         // 遍历所有可能的 delta，范围 [-MM+1, MM-1]
         for (int delta = -(b.MM - 1); delta <= (b.MM - 1); delta++) {
-            int S = b.NN + delta;  // 注意：根据题目描述，delta 是加在原始 NN 上的
+            int S =
+                b.NN + delta;  // 注意：根据题目描述，delta 是加在原始 NN 上的
 
             // 校验位置合法性
-            if (S <= lastAppliedEnd || S + b.MM - 1 > origin.size() - 1) continue;
+            if (S <= lastAppliedEnd || S + b.MM - 1 > origin.size() - 1)
+                continue;
 
             // 检查内容是否匹配
             bool match = true;
@@ -145,7 +148,8 @@ int main() {
         // 执行替换：先删后插
         // erase 的参数是 (起始迭代器, 结束迭代器)
         origin.erase(origin.begin() + finalS, origin.begin() + finalS + b.MM);
-        origin.insert(origin.begin() + finalS, b.newLines.begin(), b.newLines.end());
+        origin.insert(origin.begin() + finalS, b.newLines.begin(),
+                      b.newLines.end());
 
         // 更新状态
         lastAppliedEnd = finalS + b.mm - 1;

@@ -15,7 +15,8 @@ int mex(set<int>& hasValue) {
     return i;
 }
 
-bool getSet(int x, int y, set<int>& hasValue, vector<vector<bool>>& mat, vector<int>& value) {
+bool getSet(int x, int y, set<int>& hasValue, vector<vector<bool>>& mat,
+            vector<int>& value) {
     if (x == y) {
         return true;
     }

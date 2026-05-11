@@ -56,7 +56,8 @@ int main() {
         }
     }
 
-    sort(result.begin(), result.end(), [](const res& a, const res& b) { return a.t < b.t; });
+    sort(result.begin(), result.end(),
+         [](const res& a, const res& b) { return a.t < b.t; });
 
     for (res r : result) {
         cout << r.id << " " << r.timeshow << " ";

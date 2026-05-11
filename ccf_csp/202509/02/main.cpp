@@ -2,13 +2,15 @@
 
 using namespace std;
 
-void getMaxAndMin(int &max, int &min, const vector<vector<int>> &mat, int x, int y, vector<vector<int>> isCSP, int L) {
+void getMaxAndMin(int &max, int &min, const vector<vector<int>> &mat, int x,
+                  int y, vector<vector<int>> isCSP, int L) {
     max = -1;
     min = L;
     int index = 0;
     for (int i = 0; i < 5; i++) {
         for (int j = 0; j < 9; j++) {
-            if (index < isCSP.size() && isCSP[index][0] == i && isCSP[index][1] == j) {
+            if (index < isCSP.size() && isCSP[index][0] == i &&
+                isCSP[index][1] == j) {
                 if (mat[x + i][y + j] <= min) {
                     min = mat[x + i][y + j];
                 }
@@ -23,9 +25,11 @@ void getMaxAndMin(int &max, int &min, const vector<vector<int>> &mat, int x, int
 }
 // (max, min]
 int main() {
-    const vector<vector<int>> isCSP = {{0, 0}, {0, 1}, {0, 2}, {0, 3}, {0, 4}, {0, 5}, {0, 6}, {0, 7}, {0, 8}, {1, 0},
-                                       {1, 3}, {1, 6}, {1, 8}, {2, 0}, {2, 3}, {2, 4}, {2, 5}, {2, 6}, {2, 7}, {3, 0},
-                                       {3, 5}, {3, 6}, {4, 0}, {4, 1}, {4, 2}, {4, 3}, {4, 4}, {4, 5}, {4, 6}};
+    const vector<vector<int>> isCSP = {
+        {0, 0}, {0, 1}, {0, 2}, {0, 3}, {0, 4}, {0, 5}, {0, 6}, {0, 7},
+        {0, 8}, {1, 0}, {1, 3}, {1, 6}, {1, 8}, {2, 0}, {2, 3}, {2, 4},
+        {2, 5}, {2, 6}, {2, 7}, {3, 0}, {3, 5}, {3, 6}, {4, 0}, {4, 1},
+        {4, 2}, {4, 3}, {4, 4}, {4, 5}, {4, 6}};
     int n, L;
     cin >> n >> L;
     int max = -1, min = L;
