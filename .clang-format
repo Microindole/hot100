@@ -3,7 +3,16 @@ IndentWidth: 4
 AccessModifierOffset: -4
 ColumnLimit: 80
 BreakBeforeBraces: Attach
+
+# 禁止将 if 语句放在单行
+AllowShortIfStatementsOnASingleLine: Never
+
+# 允许短函数留在单行
 AllowShortFunctionsOnASingleLine: All
-AlignAfterOpenBracket: Align
+
+# 允许短的 case 标签
 AllowShortCaseLabelsOnASingleLine: true
+
+# 保持对齐和标准
+AlignAfterOpenBracket: Align
 Standard: Latest
