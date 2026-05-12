@@ -53,13 +53,15 @@ int main() {
     cin.tie(0);
 
     int n;
-    if (!(cin >> n)) return 0;
+    if (!(cin >> n))
+        return 0;
     string dummy;
     getline(cin, dummy);  // 吃掉 n 之后的回车换行符
 
     for (int i = 0; i < n; ++i) {
         string line;
-        if (!getline(cin, line) || line.empty()) continue;
+        if (!getline(cin, line) || line.empty())
+            continue;
 
         stringstream ss(line);
         int opType;

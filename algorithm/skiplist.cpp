@@ -71,10 +71,12 @@ bool remove(int x, const vector<int>& vals, vector<vector<int>>& nexts,
     }
 
     int target = nexts[p][0];
-    if (target == -1 || vals[target] != x) return false;
+    if (target == -1 || vals[target] != x)
+        return false;
 
     for (int i = 0; i < cur_level; i++) {
-        if (nexts[update[i]][i] != target) break;
+        if (nexts[update[i]][i] != target)
+            break;
         nexts[update[i]][i] = nexts[target][i];
     }
 
@@ -109,12 +111,15 @@ int main() {
     insert(5, vals, nexts, cur_level, MAX_L);
 
     // 测试查找
-    if (search(10, vals, nexts, cur_level)) cout << "Found 10" << endl;
+    if (search(10, vals, nexts, cur_level))
+        cout << "Found 10" << endl;
 
     // 测试删除
-    if (remove(10, vals, nexts, cur_level, MAX_L)) cout << "Deleted 10" << endl;
+    if (remove(10, vals, nexts, cur_level, MAX_L))
+        cout << "Deleted 10" << endl;
 
-    if (!search(10, vals, nexts, cur_level)) cout << "10 is gone" << endl;
+    if (!search(10, vals, nexts, cur_level))
+        cout << "10 is gone" << endl;
 
     return 0;
 }

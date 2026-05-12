@@ -33,7 +33,8 @@ bool is_safe(int n, int m, vector<int> work, const vector<vector<int>>& need,
                 }
             }
         }
-        if (!found) break;
+        if (!found)
+            break;
     }
 
     if (safe_seq.size() == n) {
@@ -49,7 +50,8 @@ bool is_safe(int n, int m, vector<int> work, const vector<vector<int>>& need,
 int main() {
     // n是进程数，m是资源数
     int n, m;
-    if (!(cin >> n >> m)) return 0;
+    if (!(cin >> n >> m))
+        return 0;
 
     // 动态分配大小，不预设大数组
     vector<int> avail(m);

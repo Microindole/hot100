@@ -9,7 +9,8 @@ struct ListNode {
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        if (head == nullptr || head->next == nullptr) return true;
+        if (head == nullptr || head->next == nullptr)
+            return true;
 
         ListNode* slow = head;
         ListNode* fast = head;

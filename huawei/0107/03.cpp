@@ -18,8 +18,10 @@ Node mul(Node n1, Node n2) { return {n1.a * n2.b + n2.a * n1.b, n1.b * n2.b}; }
 
 // 运算符优先级
 int priority(char op) {
-    if (op == '+') return 1;
-    if (op == '*') return 2;
+    if (op == '+')
+        return 1;
+    if (op == '*')
+        return 2;
     return 0;
 }
 
@@ -30,8 +32,10 @@ void compute(stack<Node>& vals, stack<char>& ops) {
     vals.pop();
     char op = ops.top();
     ops.pop();
-    if (op == '+') vals.push(add(v1, v2));
-    if (op == '*') vals.push(mul(v1, v2));
+    if (op == '+')
+        vals.push(add(v1, v2));
+    if (op == '*')
+        vals.push(mul(v1, v2));
 }
 
 int main() {

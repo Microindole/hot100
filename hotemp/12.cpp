@@ -21,7 +21,8 @@ public:
                 res += symbols[i];
             }
             // 如果数字已经减为 0，可以直接提前跳出
-            if (num == 0) break;
+            if (num == 0)
+                break;
         }
 
         return res;

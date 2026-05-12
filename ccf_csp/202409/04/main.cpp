@@ -25,7 +25,8 @@ ll dist[MAXN];
 
 int main() {
     int n, m;
-    if (!(cin >> n >> m)) return 0;
+    if (!(cin >> n >> m))
+        return 0;
 
     // 1. 输入节点坐标
     for (int i = 1; i <= n; i++) {
@@ -72,7 +73,8 @@ int main() {
         int u = pq.top().second;
         pq.pop();
 
-        if (d > dist[u]) continue;
+        if (d > dist[u])
+            continue;
 
         // 遍历 u 的所有邻居
         for (int i = 0; i < e[u].size(); i++) {

@@ -48,7 +48,8 @@ private:
             // 剪枝技巧
             // 1：处理连续重复的括号，只尝试删除第一个，避免产生重复结果 例如
             // "())"，删除第一个 ')' 和第二个 ')' 效果一样，这里只删第一个
-            if (i > start && s[i] == s[i - 1]) continue;
+            if (i > start && s[i] == s[i - 1])
+                continue;
 
             // 尝试删除一个右括号
             if (r_rem > 0 && s[i] == ')') {
@@ -70,7 +71,8 @@ private:
                 count++;
             else if (c == ')') {
                 count--;
-                if (count < 0) return false;  // 任何时刻右括号不能比左括号多
+                if (count < 0)
+                    return false;  // 任何时刻右括号不能比左括号多
             }
         }
         return count == 0;

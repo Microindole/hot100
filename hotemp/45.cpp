@@ -7,7 +7,8 @@ class Solution {
 public:
     int jump(vector<int>& nums) {
         int n = nums.size();
-        if (n <= 1) return 0;
+        if (n <= 1)
+            return 0;
 
         int steps = 0;
         int current_end = 0;
@@ -20,7 +21,8 @@ public:
                 steps++;
                 current_end = max_reach;
 
-                if (current_end >= n - 1) break;
+                if (current_end >= n - 1)
+                    break;
             }
         }
         return steps;

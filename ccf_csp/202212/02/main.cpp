@@ -10,7 +10,8 @@ int early[105], late[105];
 
 int main() {
     int n, m;
-    if (!(cin >> n >> m)) return 0;
+    if (!(cin >> n >> m))
+        return 0;
 
     // 1. 读取依赖关系 (p_i) 和 训练耗时 (t_i)
     for (int i = 1; i <= m; i++) cin >> p[i];

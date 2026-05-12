@@ -11,7 +11,8 @@ struct ListNode {
 class Solution {
 public:
     ListNode* sortList(ListNode* head) {
-        if (!head || !head->next) return head;
+        if (!head || !head->next)
+            return head;
 
         ListNode* slow = head;
         ListNode* fast = head->next;

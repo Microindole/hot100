@@ -9,7 +9,8 @@ int main() {
 
     int n, m, p, q;
     cin >> n >> m >> p >> q;
-    if (n * m != p * q) return 0;
+    if (n * m != p * q)
+        return 0;
 
     vector<vector<int>> src(n, vector<int>(m, 0)), pos(p, vector<int>(q, 0));
     for (int i = 0; i < n; i++) {

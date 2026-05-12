@@ -18,7 +18,8 @@ struct Expr {
 // 解析像 "123:456" 或 "1:2" 这样的字符串
 Expr parseExpr(string s) {
     size_t pos = s.find(':');
-    if (pos == string::npos) pos = s.find('~');
+    if (pos == string::npos)
+        pos = s.find('~');
 
     Expr res;
     res.attr = stoi(s.substr(0, pos));
@@ -29,15 +30,19 @@ Expr parseExpr(string s) {
 
 // 匹配单个原子表达式
 bool check(int dn, const Expr& e, map<int, unordered_map<int, int>>& info) {
-    if (info[dn].find(e.attr) == info[dn].end()) return false;
-    if (e.op == ':') return info[dn][e.attr] == e.val;
-    if (e.op == '~') return info[dn][e.attr] != e.val;
+    if (info[dn].find(e.attr) == info[dn].end())
+        return false;
+    if (e.op == ':')
+        return info[dn][e.attr] == e.val;
+    if (e.op == '~')
+        return info[dn][e.attr] != e.val;
     return false;
 }
 
 void solve() {
     int n;
-    if (!(cin >> n)) return;
+    if (!(cin >> n))
+        return;
 
     // 使用 map<int, ...> 自动按 DN 从小到大排序
     map<int, unordered_map<int, int>> info;
@@ -74,14 +79,17 @@ void solve() {
             for (auto const& [dn, attrs] : info) {
                 bool res1 = check(dn, e1, info);
                 bool res2 = check(dn, e2, info);
-                if (s[0] == '&' && res1 && res2) results.push_back(dn);
-                if (s[0] == '|' && (res1 || res2)) results.push_back(dn);
+                if (s[0] == '&' && res1 && res2)
+                    results.push_back(dn);
+                if (s[0] == '|' && (res1 || res2))
+                    results.push_back(dn);
             }
         } else {
             // 普通表达式 1:2
             Expr e = parseExpr(s);
             for (auto const& [dn, attrs] : info) {
-                if (check(dn, e, info)) results.push_back(dn);
+                if (check(dn, e, info))
+                    results.push_back(dn);
             }
         }
 

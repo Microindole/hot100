@@ -46,7 +46,8 @@ string decodeString(string s) {
                 curr += temp;
             }
 
-            if (times == 0) curr = "";
+            if (times == 0)
+                curr = "";
 
             saveString.push(curr);
             curr = "";

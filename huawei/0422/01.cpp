@@ -56,7 +56,8 @@ int solve() {
     // --- 遍历剩下的格子 ---
     for (int i = 1; i < m; ++i) {
         for (int j = 1; j < n; ++j) {
-            if (grid[i][j] != 0) continue;  // 障碍物直接跳过（保持 INF）
+            if (grid[i][j] != 0)
+                continue;  // 障碍物直接跳过（保持 INF）
 
             // 1. 计算 dp[i][j][0] (向右进入)
             // 可以从左边格子的“向右”状态过来（不转向）

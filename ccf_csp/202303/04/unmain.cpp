@@ -8,14 +8,16 @@ struct BigInt {
 
     bool operator<(const BigInt& other) const {
         for (int i = 0; i < 8; ++i) {
-            if (data[i] != other.data[i]) return data[i] < other.data[i];
+            if (data[i] != other.data[i])
+                return data[i] < other.data[i];
         }
         return false;
     }
     bool operator<=(const BigInt& other) const { return !(other < *this); }
     bool operator==(const BigInt& other) const {
         for (int i = 0; i < 8; ++i)
-            if (data[i] != other.data[i]) return false;
+            if (data[i] != other.data[i])
+                return false;
         return true;
     }
 };
@@ -26,7 +28,8 @@ BigInt parseAddr(string s, int n) {
     string hex = "";
     // 去掉冒号
     for (char c : s)
-        if (c != ':') hex += c;
+        if (c != ':')
+            hex += c;
     // 补齐前导0，确保长度对齐
     int expectedLen = n / 4;
     while (hex.length() < expectedLen) hex = "0" + hex;
@@ -53,7 +56,8 @@ set<Node> odt;
 // 分裂区间，返回左端点为 pos 的迭代器
 auto split(BigInt pos) {
     auto it = odt.lower_bound({pos, pos, 0});
-    if (it != odt.end() && it->l == pos) return it;
+    if (it != odt.end() && it->l == pos)
+        return it;
     --it;
     BigInt l = it->l, r = it->r;
     int id = it->id;
@@ -95,7 +99,8 @@ int main() {
                     can_assign = false;
                     break;
                 }
-                if (it == itR) break;
+                if (it == itR)
+                    break;
             }
 
             if (can_assign) {
@@ -109,9 +114,11 @@ int main() {
                 odt.erase(itL, itNext);
 
                 // 重新插入被切断的剩余部分和新区间
-                if (oldL < l) odt.insert({oldL, {0}, idL});  // 需精确处理边界
+                if (oldL < l)
+                    odt.insert({oldL, {0}, idL});  // 需精确处理边界
                 odt.insert({l, r, id});
-                if (r < oldR) odt.insert({{0}, oldR, idR});
+                if (r < oldR)
+                    odt.insert({{0}, oldR, idR});
             } else {
                 cout << "NO" << endl;
             }

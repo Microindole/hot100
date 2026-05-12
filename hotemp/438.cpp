@@ -7,7 +7,8 @@ class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
         int s_len = s.length(), p_len = p.length();
-        if (s_len < p_len) return {};
+        if (s_len < p_len)
+            return {};
 
         vector<int> res;
         vector<int> s_cnt(26, 0);

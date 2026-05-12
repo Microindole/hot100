@@ -7,7 +7,8 @@ class Solution {
 public:
     void solve(vector<vector<char>>& board) {
         int rows = board.size();
-        if (rows == 0) return;
+        if (rows == 0)
+            return;
         int cols = board[0].size();
 
         // 1. 遍历左右边界

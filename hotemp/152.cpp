@@ -5,7 +5,8 @@ using namespace std;
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
-        if (nums.empty()) return 0;
+        if (nums.empty())
+            return 0;
 
         int max_so_far = nums[0];
         int min_so_far = nums[0];

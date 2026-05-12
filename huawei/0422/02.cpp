@@ -17,7 +17,8 @@ struct Dependency {
 
 void solve() {
     int n;
-    if (!(cin >> n)) return;
+    if (!(cin >> n))
+        return;
 
     vector<Dependency> input_order;                   // 记录输入顺序
     unordered_map<long long, vector<long long>> adj;  // 邻接表

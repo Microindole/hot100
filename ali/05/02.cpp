@@ -6,7 +6,8 @@ using namespace std;
 
 int main() {
     int n, m;
-    if (!(cin >> n >> m)) return 0;
+    if (!(cin >> n >> m))
+        return 0;
 
     vector<bool> flag(n + 1, false);
     vector<int> a(m);

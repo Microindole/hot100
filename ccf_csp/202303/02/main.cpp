@@ -107,7 +107,8 @@ bool check(int targetDay, int n, ll m, const vector<pair<int, int>>& fields) {
 int main() {
     int n, k;
     ll m;
-    if (!(cin >> n >> m >> k)) return 0;
+    if (!(cin >> n >> m >> k))
+        return 0;
 
     vector<pair<int, int>> fields(n);
     int maxT = 0;

@@ -7,7 +7,8 @@ class Solution {
 public:
     int trap(vector<int>& height) {
         int n = height.size();
-        if (n == 0) return 0;
+        if (n == 0)
+            return 0;
 
         vector<int> left(n);
         vector<int> right(n);

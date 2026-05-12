@@ -28,7 +28,8 @@ int main() {
     // 本地测试可以使用这行： freopen("in.txt", "r", stdin);
 
     int n;
-    if (!(cin >> n)) return 0;
+    if (!(cin >> n))
+        return 0;
     string line;
     getline(cin, line);  // 吸收 n 之后的回车
 
@@ -42,11 +43,13 @@ int main() {
     // 1. 读入补丁并移除注释
     vector<string> patchRaw;
     while (getline(cin, line)) {
-        if (!line.empty() && line[0] == '#') continue;
+        if (!line.empty() && line[0] == '#')
+            continue;
         patchRaw.push_back(line);
     }
 
-    if (patchRaw.empty()) return 0;  // 没补丁直接结束
+    if (patchRaw.empty())
+        return 0;  // 没补丁直接结束
 
     // 2. 将补丁切分成 Block
     vector<Block> blocks;

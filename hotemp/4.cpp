@@ -41,7 +41,8 @@ public:
                     maxLeft = std::max(nums1[i - 1], nums2[j - 1]);
 
                 // 如果总长度是奇数，直接返回左半部分最大值
-                if ((m + n) % 2 == 1) return maxLeft;
+                if ((m + n) % 2 == 1)
+                    return maxLeft;
 
                 int minRight = 0;
                 if (i == m)

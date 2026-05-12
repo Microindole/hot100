@@ -7,7 +7,8 @@ const ll MOD = 1e9 + 7;
 const ll INV2 = 500000004;  // 2在模10^9+7下的逆元
 
 ll get_sum(ll n) {
-    if (n <= 0) return 0;
+    if (n <= 0)
+        return 0;
 
     // 第一部分：n^2 (n个n相加)
     ll res = (n % MOD) * (n % MOD) % MOD;

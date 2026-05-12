@@ -13,7 +13,8 @@ int main() {
 
     int n;
     ll C, M;
-    if (!(cin >> n >> C >> M)) return 0;
+    if (!(cin >> n >> C >> M))
+        return 0;
 
     vector<ll> ci(n), mi(n), vi(n);
     for (int i = 0; i < n; i++) {

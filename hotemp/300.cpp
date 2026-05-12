@@ -6,7 +6,8 @@ using namespace std;
 class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
-        if (nums.empty()) return 0;
+        if (nums.empty())
+            return 0;
 
         // tails[i] 存储长度为 i + 1 的子序列的最小末尾
         vector<int> tails;

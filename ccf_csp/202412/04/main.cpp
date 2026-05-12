@@ -11,7 +11,8 @@ int main() {
     cin.tie(0);
 
     int n;
-    if (!(cin >> n)) return 0;
+    if (!(cin >> n))
+        return 0;
 
     vector<int> a(n + 1);
     vector<int> k(n + 1);

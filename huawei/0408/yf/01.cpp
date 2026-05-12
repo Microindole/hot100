@@ -15,7 +15,8 @@ int getLength(string& res, int left, int right) {
 }
 
 string getRes(string& s) {
-    if (s.empty()) return "";
+    if (s.empty())
+        return "";
     int start = 0, maxLen = 0;
 
     string result = "";

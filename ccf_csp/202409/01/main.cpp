@@ -11,15 +11,21 @@ int check(string pwd) {
 
     for (char ch : pwd) {
         cnt[ch]++;
-        if (cnt[ch] > 2) haveTwo = true;
-        if (isdigit(ch)) haveDigit = true;
-        if (isalpha(ch)) haveAlpha = true;
-        if (ch == '*' || ch == '#') haveChar = true;
+        if (cnt[ch] > 2)
+            haveTwo = true;
+        if (isdigit(ch))
+            haveDigit = true;
+        if (isalpha(ch))
+            haveAlpha = true;
+        if (ch == '*' || ch == '#')
+            haveChar = true;
     }
     threeType = haveDigit && haveAlpha && haveChar;
 
-    if (!haveTwo && threeType) return 2;
-    if (haveTwo && threeType) return 1;
+    if (!haveTwo && threeType)
+        return 2;
+    if (haveTwo && threeType)
+        return 1;
     return 0;
 }
 

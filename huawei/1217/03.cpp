@@ -62,7 +62,8 @@ bool compareFiles(const FileNode& a, const FileNode& b) {
         }
 
         if (segA.isDigit && segB.isDigit) {
-            if (segA.val != segB.val) return segA.val < segB.val;
+            if (segA.val != segB.val)
+                return segA.val < segB.val;
 
         }
 
@@ -77,7 +78,8 @@ bool compareFiles(const FileNode& a, const FileNode& b) {
 
 int main() {
     int n;
-    if (!(cin >> n)) return 0;
+    if (!(cin >> n))
+        return 0;
 
     vector<FileNode> files(n);
     for (int i = 0; i < n; ++i) {

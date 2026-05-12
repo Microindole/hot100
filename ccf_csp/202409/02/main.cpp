@@ -101,11 +101,13 @@ int main() {
 
     // 2. 读取初始字符串 #s#
     string s;
-    if (!getline(cin, s)) return 0;
+    if (!getline(cin, s))
+        return 0;
 
     // 3. 读取变换规则数量 n
     int n;
-    if (!(cin >> n)) return 0;
+    if (!(cin >> n))
+        return 0;
     string dummy;
     getline(cin, dummy);  // 必须：吸收 cin>>n 留下的换行符
 
@@ -132,7 +134,8 @@ int main() {
 
     // 5. 处理 m 个查询
     int m;
-    if (!(cin >> m)) return 0;
+    if (!(cin >> m))
+        return 0;
     while (m--) {
         int k;
         cin >> k;
