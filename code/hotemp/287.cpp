@@ -6,21 +6,21 @@ using namespace std;
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
-        for (int i = 0; i < nums.size(); i++) {
-            int tempi = i;
-            while (nums[tempi] != tempi + 1) {
-                int temp = nums[nums[tempi] - 1];
-                nums[nums[tempi] - 1] = nums[tempi];
-                tempi = temp;
-            }
+        int slow = nums[0];
+        int fast = nums[nums[0]];
+
+        while (fast != slow) {
+            slow = nums[slow];
+            fast = nums[nums[fast]];
         }
 
-        for (int i = 0; i < nums.size(); i++) {
-            if (nums[i] != i + 1) {
-                return nums[i];
-            }
+        int p2 = nums[0];
+        int p1 = nums[slow];
+        while (p1 != p2) {
+            p1 = nums[p1];
+            p2 = nums[p2];
         }
 
-        return -1;
+        return p1;
     }
 };
