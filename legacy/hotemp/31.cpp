@@ -19,7 +19,7 @@ public:
         }
 
         if (index == -1) {
-            sort(nums.begin(), nums.end());
+            reverse(nums.begin(), nums.end());
         } else {
             int minmax = INT_MAX;
             int minmaxIndex = -1;
@@ -31,7 +31,7 @@ public:
             }
 
             swap(nums[index], nums[minmaxIndex]);
-            sort(nums.begin() + index + 1, nums.end());
+            reverse(nums.begin() + index + 1, nums.end());
         }
     }
 };
