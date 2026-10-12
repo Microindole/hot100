@@ -7,7 +7,8 @@ class MedianFinder {
     priority_queue<int, vector<int>, greater<int>> right;
 
 public:
-    MedianFinder() {}
+    MedianFinder() {
+    }
 
     void addNum(int num) {
         int lsize = left.size(), rsize = right.size();

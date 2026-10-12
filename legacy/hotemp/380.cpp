@@ -11,7 +11,8 @@ private:
     unordered_map<int, int> valToIndex;
 
 public:
-    RandomizedSet() {}
+    RandomizedSet() {
+    }
 
     bool insert(int val) {
         if (valToIndex.count(val)) {
@@ -41,7 +42,9 @@ public:
         return true;
     }
 
-    int getRandom() { return nums[rand() % nums.size()]; }
+    int getRandom() {
+        return nums[rand() % nums.size()];
+    }
 };
 
 /**

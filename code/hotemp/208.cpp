@@ -11,7 +11,9 @@ class Trie {
     Node* root;
 
 public:
-    Trie() { root = new Node(); }
+    Trie() {
+        root = new Node();
+    }
 
     void insert(string word) {
         Node* curr = root;

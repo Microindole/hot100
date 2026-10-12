@@ -13,7 +13,9 @@ struct BigInt {
         }
         return false;
     }
-    bool operator<=(const BigInt& other) const { return !(other < *this); }
+    bool operator<=(const BigInt& other) const {
+        return !(other < *this);
+    }
     bool operator==(const BigInt& other) const {
         for (int i = 0; i < 8; ++i)
             if (data[i] != other.data[i])
@@ -48,7 +50,9 @@ BigInt parseAddr(string s, int n) {
 struct Node {
     BigInt l, r;
     mutable int id;
-    bool operator<(const Node& other) const { return l < other.l; }
+    bool operator<(const Node& other) const {
+        return l < other.l;
+    }
 };
 
 set<Node> odt;

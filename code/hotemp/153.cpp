@@ -28,5 +28,7 @@ public:
 
         return -1;
     }
-    int findMin(vector<int>& nums) { return nums[getK(nums) + 1]; }
+    int findMin(vector<int>& nums) {
+        return nums[getK(nums) + 1];
+    }
 };

@@ -2,7 +2,9 @@
 
 class Solution {
 public:
-    int mySqrt(int x) { return 0; }
+    int mySqrt(int x) {
+        return 0;
+    }
 
     /**
      * @brief 线性搜索法

@@ -12,9 +12,13 @@ struct Node {
     ll a, b;
 };
 
-Node add(Node n1, Node n2) { return {n1.a + n2.a, n1.b + n2.b}; }
+Node add(Node n1, Node n2) {
+    return {n1.a + n2.a, n1.b + n2.b};
+}
 
-Node mul(Node n1, Node n2) { return {n1.a * n2.b + n2.a * n1.b, n1.b * n2.b}; }
+Node mul(Node n1, Node n2) {
+    return {n1.a * n2.b + n2.a * n1.b, n1.b * n2.b};
+}
 
 // 运算符优先级
 int priority(char op) {

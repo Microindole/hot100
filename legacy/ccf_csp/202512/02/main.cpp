@@ -58,7 +58,9 @@ int main() {
     return 0;
 }
 
-int f(int x, int k) { return ((x * x + k * k) % 8) ^ k; }
+int f(int x, int k) {
+    return ((x * x + k * k) % 8) ^ k;
+}
 
 int g(int x, int k) {
     int xa = x / 64;

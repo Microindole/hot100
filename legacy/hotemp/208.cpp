@@ -21,7 +21,9 @@ private:
     TrieNode* root;
 
 public:
-    Trie() { root = new TrieNode(); }
+    Trie() {
+        root = new TrieNode();
+    }
 
     void insert(string word) {
         TrieNode* node = root;

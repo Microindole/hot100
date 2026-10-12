@@ -9,7 +9,8 @@ private:
     stack<int> minStack;
 
 public:
-    MinStack() {}
+    MinStack() {
+    }
 
     void push(int val) {
         dataStack.push(val);
@@ -25,7 +26,11 @@ public:
         minStack.pop();
     }
 
-    int top() { return dataStack.top(); }
+    int top() {
+        return dataStack.top();
+    }
 
-    int getMin() { return minStack.top(); }
+    int getMin() {
+        return minStack.top();
+    }
 };

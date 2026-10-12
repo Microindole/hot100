@@ -12,7 +12,9 @@ private:
     unordered_map<int, list<int>::iterator> pos;
 
 public:
-    LRUCache(int capacity) { this->cap = capacity; }
+    LRUCache(int capacity) {
+        this->cap = capacity;
+    }
 
     int get(int key) {
         if (!val.count(key))
