@@ -1,18 +1,55 @@
 BasedOnStyle: Google
+
+# 默认缩进空格数
 IndentWidth: 4
+
+# public/private 反向移动位置
 AccessModifierOffset: -4
+
+# 最大行宽
 ColumnLimit: 80
+
+# 左大括号位置 Attach为行尾 Allman另起一行
 BreakBeforeBraces: Attach
 
 # 禁止将 if 语句放在单行
 AllowShortIfStatementsOnASingleLine: Never
 
 # 允许短函数留在单行
-AllowShortFunctionsOnASingleLine: All
+AllowShortFunctionsOnASingleLine: None
 
 # 允许短的 case 标签
 AllowShortCaseLabelsOnASingleLine: true
 
-# 保持对齐和标准
+# 参数换行保持对齐和标准
 AlignAfterOpenBracket: Align
+
 Standard: Latest
+
+
+# 禁止短循环压缩成一行
+# AllowShortLoopsOnASingleLine: false
+
+# 禁止短代码块压缩成一行
+# AllowShortBlocksOnASingleLine: Never
+
+# 禁止短 lambda 压缩成一行
+# AllowShortLambdasOnASingleLine: None
+
+# 禁止短函数压缩成一行
+# AllowShortFunctionsOnASingleLine: None
+
+# 控制语句关键字后保留空格
+# SpaceBeforeParens: ControlStatements
+
+# 指针符号靠近变量名
+# PointerAlignment: Right
+
+# 引用符号靠近变量名
+# ReferenceAlignment: Right
+
+# 赋值运算符两侧添加空格
+# SpaceBeforeAssignmentOperators: true
+
+# 逗号后添加空格
+# SpaceAfterCStyleCast: false
